@@ -29,63 +29,6 @@ public class Principal {
 
          */
 
-        /*
-        ***********************************************************************************
-        ACTIVIDAD DOS:
-        Creación de dos objetos rectangulos (A y B)
-        * *********************************************************************************
-        */
-/*
-        //Creación del primer réctangulo
-        System.out.println();
-        System.out.println("**** Creación del rectangulo A****");
-        System.out.println("Ingrese la coordenada de la primera esquina del rectangulo A: ");
-        System.out.print("Coordenada 1: ");
-        double ca1 = nuevo.nextDouble(); //Coordenada uno
-        System.out.print("Coordenada 2: ");
-        double ca2 = nuevo.nextDouble(); //Coordenada dos
-        System.out.println("Ingrese la coordenada de la segunda esquina del rectangulo A: ");
-        System.out.print("Coordenada 3: ");
-        double ca3 = nuevo.nextDouble(); //Coordenada tres
-        System.out.print("Coordenada 4: ");
-        double ca4 = nuevo.nextDouble(); //Coordenada cuatro
-
-        Coordenada esquinaA1 = new Coordenada(ca1,ca2);
-        Coordenada esquinaA2 = new Coordenada(ca3,ca4);
-
-        Rectangulo A = new Rectangulo(esquinaA1,esquinaA2);
-
-        //Creación del segundo réctangulo
-        System.out.println();
-        System.out.println("**** Creación del rectangulo B****");
-        System.out.println("Ingrese la coordenada de la primera esquina del rectangulo B: ");
-        System.out.print("Coordenada 1: ");
-        double cb1 = nuevo.nextDouble(); //Coordenada uno
-        System.out.print("Coordenada 2: ");
-        double cb2 = nuevo.nextDouble(); //Coordenada dos
-        System.out.println("Ingrese la coordenada de la segunda esquina del rectangulo B: ");
-        System.out.print("Coordenada 3: ");
-        double cb3 = nuevo.nextDouble(); //Coordenada tres
-        System.out.print("Coordenada 4: ");
-        double cb4 = nuevo.nextDouble(); //Coordenada cuatro
-
-        Coordenada esquinaB1 = new Coordenada(cb1,cb2);
-        Coordenada esquinaB2 = new Coordenada(cb3,cb4);
-
-        Rectangulo B = new Rectangulo(esquinaB1,esquinaB2);
-
-        //IMPRESION DE LOS RECTANGULOS
-        System.out.println();
-        System.out.println("Rectangulo A: "+ A);
-        System.out.println("Rectangulo B: "+ B);
-
-        //SE PRUEBA LA CLASE VERIFICADOR
-        System.out.println();
-        System.out.println("**** PRUEBA DE LA CLASE VERIFICADOR: ****");
-        System.out.println("¿Rectangulo B se sobrepone a rectangulo A?: " + Verificador.esSobrePos(A,B));
-        System.out.println("¿Rectangulo B esta junto a rectangulo A?: " + Verificador.esJunto(A,B));
-        System.out.println();
-*/
         System.out.println("********* ----------> PRUEBAS EJEMPLOS CLASE VERIFICADOR <---------- *********");
         //PRUEBAS DE LOS EJEMPLOS METODO SOBREPONER
         // (todos tienen que ser true)
@@ -306,5 +249,79 @@ public class Principal {
         Rectangulo prueba02B = new Rectangulo(prueba07,prueba08);
         System.out.println("PRUEBA EJEMPLO ERROR 2 METODO ESDISJUNTO: " + Verificador.esDisjunto(prueba02A,prueba02B)); //FALSE
 
+        /*
+        ***********************************************************************************
+        ACTIVIDAD DOS:
+        Creación de dos objetos rectangulos (A y B)
+        * *********************************************************************************
+        */
+
+        //Creación del primer réctangulo
+        System.out.println();
+        System.out.println("**** Creación del rectangulo A****");
+        System.out.println("Ingrese la coordenada de la primera esquina del rectangulo A: ");
+        System.out.print("Coordenada 1: ");
+        double ca1 = nuevo.nextDouble(); //Coordenada uno
+        System.out.print("Coordenada 2: ");
+        double ca2 = nuevo.nextDouble(); //Coordenada dos
+        System.out.println("Ingrese la coordenada de la segunda esquina del rectangulo A: ");
+        System.out.print("Coordenada 3: ");
+        double ca3 = nuevo.nextDouble(); //Coordenada tres
+        System.out.print("Coordenada 4: ");
+        double ca4 = nuevo.nextDouble(); //Coordenada cuatro
+
+        Coordenada esquinaA1 = new Coordenada(ca1,ca2);
+        Coordenada esquinaA2 = new Coordenada(ca3,ca4);
+
+        Rectangulo A = new Rectangulo(esquinaA1,esquinaA2);
+
+        //Creación del segundo réctangulo
+        System.out.println();
+        System.out.println("**** Creación del rectangulo B****");
+        System.out.println("Ingrese la coordenada de la primera esquina del rectangulo B: ");
+        System.out.print("Coordenada 1: ");
+        double cb1 = nuevo.nextDouble(); //Coordenada uno
+        System.out.print("Coordenada 2: ");
+        double cb2 = nuevo.nextDouble(); //Coordenada dos
+        System.out.println("Ingrese la coordenada de la segunda esquina del rectangulo B: ");
+        System.out.print("Coordenada 3: ");
+        double cb3 = nuevo.nextDouble(); //Coordenada tres
+        System.out.print("Coordenada 4: ");
+        double cb4 = nuevo.nextDouble(); //Coordenada cuatro
+
+        Coordenada esquinaB1 = new Coordenada(cb1,cb2);
+        Coordenada esquinaB2 = new Coordenada(cb3,cb4);
+
+        Rectangulo B = new Rectangulo(esquinaB1,esquinaB2);
+
+        //IMPRESION DE LOS RECTANGULOS
+        System.out.println();
+        System.out.println("Rectangulo A: "+ A);
+        System.out.println("Rectangulo B: "+ B);
+
+        //SE PRUEBA LA CLASE VERIFICADOR
+        System.out.println();
+        System.out.println("**** PRUEBA DE LA CLASE VERIFICADOR: ****");
+        System.out.println("¿Rectangulo B se sobrepone a rectangulo A?: " + Verificador.esSobrePos(A,B));
+        System.out.println("¿Rectangulo B esta junto a rectangulo A?: " + Verificador.esJunto(A,B));
+        System.out.println("¿Rectangulo B no esta junto a rectangulo A?: " + Verificador.esDisjunto(A,B));
+        System.out.println();
+
     }
+
+    //PUNTO 2 PARTE C.3.A
+    //CREAR METODO DE CLASE rectanguloSobre
+    public static Rectangulo rectanguloSobre(Rectangulo A, Rectangulo B){
+        if (!Verificador.esSobrePos(A,B)){ return null; }
+
+        double[] x1 = A.rangoX();
+        double[] y1 = A.rangoY();
+        double[] x2 = B.rangoX();
+        double[] y2 = B.rangoY();
+
+        Coordenada nuevaCoor1 = new Coordenada(menorX, menorY);
+        Coordenada nuevaCoor2 = new Coordenada(mayorX, mayorY);
+
+        return new Rectangulo(nuevaCoor1, nuevaCoor2);
+        }
 }
