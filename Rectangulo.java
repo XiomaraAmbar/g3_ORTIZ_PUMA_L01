@@ -19,8 +19,21 @@ public class Rectangulo {
         //completarEsquinas();
     }
 
-    //metodo define 'x' y 'y'
-    public double definiendoEjes
+    //metodos definen 'x' y 'y' en rangos de menor a mayor
+    //Se uso min y max en vez de if
+    public double[] definiendoX() {
+        double[] ejeX = new double[2];
+        ejeX[0] = Math.min(esquina1.getX(), esquina2.getX()); // se guarda en posicion 0 el x menor
+        ejeX[1] = Math.max(esquina1.getX(), esquina2.getX()); // y en posicion 1 el x mayor
+        return ejeX;
+    }
+
+    public double[] definiendoY() {
+        double[] ejeY = new double[2];
+        ejeY[0] = Math.min(esquina1.getY(), esquina2.getY()); // se guarda en posicion 0 el y menor
+        ejeY[1] = Math.max(esquina1.getY(), esquina2.getY()); // y en posicion 1 el y mayor
+        return ejeY;
+    }
 
     /*
     /*
