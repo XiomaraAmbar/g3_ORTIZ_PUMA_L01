@@ -83,10 +83,13 @@ public class Principal {
         System.out.println();
         System.out.println("**** PRUEBA DE LA CLASE VERIFICADOR: ****");
         System.out.println("¿Rectangulo B se sobrepone a rectangulo A?: " + Verificador.esSobrePos(A,B));
+        System.out.println("¿Rectangulo B esta junto a rectangulo A?: " + Verificador.esJunto(A,B));
         System.out.println();
 */
-
-        //PRUEBAS DE LOS EJEMPLOS (todos tienen que ser true)
+        System.out.println("********* ----------> PRUEBAS EJEMPLOS CLASE VERIFICADOR <---------- *********");
+        //PRUEBAS DE LOS EJEMPLOS METODO SOBREPONER
+        // (todos tienen que ser true)
+        System.out.println("********* PRUEBAS EJEMPLOS METODO SOBREPONER *********");
         //PRUEBA EJEMPLO 1
         Coordenada p1 = new Coordenada(2,4);
         Coordenada p2 = new Coordenada(4,1);
@@ -94,8 +97,7 @@ public class Principal {
         Coordenada p4 = new Coordenada(3,3);
         Rectangulo p1A = new Rectangulo(p1,p2);
         Rectangulo p1B = new Rectangulo(p3,p4);
-        System.out.println("PRUEBA EJEMPLO 1 DE LA CLASE VERIFICADOR: " + Verificador.esSobrePos(p1A,p1B)); //TRUE
-        System.out.println();
+        System.out.println("PRUEBA EJEMPLO 1 METODO SOBREPONER: " + Verificador.esSobrePos(p1A,p1B)); //TRUE
 
         //PRUEBA EJEMPLO 2
         Coordenada p5 = new Coordenada(6,4);
@@ -104,8 +106,7 @@ public class Principal {
         Coordenada p8 = new Coordenada(5,1);
         Rectangulo p2A = new Rectangulo(p5,p6);
         Rectangulo p2B = new Rectangulo(p7,p8);
-        System.out.println("PRUEBA EJEMPLO 2 DE LA CLASE VERIFICADOR: " + Verificador.esSobrePos(p2A,p2B)); //TRUE
-        System.out.println();
+        System.out.println("PRUEBA EJEMPLO 2 METODO SOBREPONER: " + Verificador.esSobrePos(p2A,p2B)); //TRUE
 
         //PRUEBA EJEMPLO 3
         Coordenada p9 = new Coordenada(5,5);
@@ -114,8 +115,7 @@ public class Principal {
         Coordenada p12 = new Coordenada(6,2);
         Rectangulo p3A = new Rectangulo(p9,p10);
         Rectangulo p3B = new Rectangulo(p11,p12);
-        System.out.println("PRUEBA EJEMPLO 3 DE LA CLASE VERIFICADOR: " + Verificador.esSobrePos(p3A,p3B)); //TRUE
-        System.out.println();
+        System.out.println("PRUEBA EJEMPLO 3 METODO SOBREPONER: " + Verificador.esSobrePos(p3A,p3B)); //TRUE
 
         //PRUEBA EJEMPLO 4
         Coordenada p13 = new Coordenada(1,9);
@@ -124,9 +124,7 @@ public class Principal {
         Coordenada p16 = new Coordenada(1,6);
         Rectangulo p4A = new Rectangulo(p13,p14);
         Rectangulo p4B = new Rectangulo(p15,p16);
-        System.out.println("PRUEBA EJEMPLO 4 DE LA CLASE VERIFICADOR: " + Verificador.esSobrePos(p4A,p4B)); //TRUE
-        System.out.println();
-
+        System.out.println("PRUEBA EJEMPLO 4 METODO SOBREPONER: " + Verificador.esSobrePos(p4A,p4B)); //TRUE
 
         //PRUEBA EJEMPLO 5
         Coordenada p17 = new Coordenada(7,4);
@@ -135,8 +133,7 @@ public class Principal {
         Coordenada p20 = new Coordenada(5,1);
         Rectangulo p5A = new Rectangulo(p17,p18);
         Rectangulo p5B = new Rectangulo(p19,p20);
-        System.out.println("PRUEBA EJEMPLO 5 DE LA CLASE VERIFICADOR: " + Verificador.esSobrePos(p5A,p5B)); //TRUE
-        System.out.println();
+        System.out.println("PRUEBA EJEMPLO 5 METODO SOBREPONER: " + Verificador.esSobrePos(p5A,p5B)); //TRUE
 
         //PRUEBA EJEMPLO 6
         Coordenada p21 = new Coordenada(7,9);
@@ -145,10 +142,10 @@ public class Principal {
         Coordenada p24 = new Coordenada(5,7);
         Rectangulo p6A = new Rectangulo(p21,p22);
         Rectangulo p6B = new Rectangulo(p23,p24);
-        System.out.println("PRUEBA EJEMPLO 6 DE LA CLASE VERIFICADOR: " + Verificador.esSobrePos(p6A,p6B)); //TRUE
-        System.out.println();
+        System.out.println("PRUEBA EJEMPLO 6 METODO SOBREPONER: " + Verificador.esSobrePos(p6A,p6B)); //TRUE
 
-        //PRUEBAS DE LOS EJEMPLOS (todos tienen que ser False)
+        //PRUEBAS DE LOS EJEMPLOS METODO SOBREPONER
+        // (todos tienen que ser False)
         //PRUEBA EJEMPLO 1
         Coordenada pe1 = new Coordenada(2,4);
         Coordenada pe2 = new Coordenada(4,1);
@@ -156,8 +153,7 @@ public class Principal {
         Coordenada pe4 = new Coordenada(7,5);
         Rectangulo pe1A = new Rectangulo(pe1,pe2);
         Rectangulo pe1B = new Rectangulo(pe3,pe4);
-        System.out.println("PRUEBA EJEMPLO ERROR 1 DE LA CLASE VERIFICADOR: " + Verificador.esSobrePos(pe1A,pe1B)); //FALSE
-        System.out.println();
+        System.out.println("PRUEBA EJEMPLO ERROR 1 METODO SOBREPONER: " + Verificador.esSobrePos(pe1A,pe1B)); //FALSE
 
         //PRUEBA EJEMPLO 2
         Coordenada pe5 = new Coordenada(6,4);
@@ -166,8 +162,59 @@ public class Principal {
         Coordenada pe8 = new Coordenada(2,6);
         Rectangulo pe2A = new Rectangulo(pe5,pe6);
         Rectangulo pe2B = new Rectangulo(pe7,pe8);
-        System.out.println("PRUEBA EJEMPLO ERROR 2 DE LA CLASE VERIFICADOR: " + Verificador.esSobrePos(pe2A,pe2B)); //FALSE
+        System.out.println("PRUEBA EJEMPLO ERROR 2 METODO SOBREPONER: " + Verificador.esSobrePos(pe2A,pe2B)); //FALSE
+
+
+        //PRUEBAS DE LOS EJEMPLOS METODO ESJUNTO
+        // (todos tienen que ser true)
         System.out.println();
+        System.out.println("********* PRUEBAS EJEMPLOS METODO ESJUNTO *********");
+        //PRUEBA EJEMPLO 1
+        Coordenada pru1 = new Coordenada(1,8);
+        Coordenada pru2 = new Coordenada(3,5);
+        Coordenada pru3 = new Coordenada(5,9);
+        Coordenada pru4 = new Coordenada(3,6);
+        Rectangulo pru1A = new Rectangulo(pru1,pru2);
+        Rectangulo pru1B = new Rectangulo(pru3,pru4);
+        System.out.println("PRUEBA EJEMPLO 1 METODO ESJUNTO: " + Verificador.esJunto(pru1A,pru1B)); //TRUE
+
+        //PRUEBA EJEMPLO 2
+        Coordenada pru5 = new Coordenada(6,7);
+        Coordenada pru6 = new Coordenada(8,5);
+        Coordenada pru7 = new Coordenada(9,5);
+        Coordenada pru8 = new Coordenada(5,3);
+        Rectangulo pru2A = new Rectangulo(pru5,pru6);
+        Rectangulo pru2B = new Rectangulo(pru7,pru8);
+        System.out.println("PRUEBA EJEMPLO 2 METODO ESJUNTO: " + Verificador.esJunto(pru2A,pru2B)); //TRUE
+
+        //PRUEBA EJEMPLO 3
+        Coordenada pru9 = new Coordenada(1,4);
+        Coordenada pru10 = new Coordenada(3,2);
+        Coordenada pru11 = new Coordenada(6,2);
+        Coordenada pru12 = new Coordenada(3,0);
+        Rectangulo pru3A = new Rectangulo(pru9,pru10);
+        Rectangulo pru3B = new Rectangulo(pru11,pru12);
+        System.out.println("PRUEBA EJEMPLO 3 METODO ESJUNTO: " + Verificador.esJunto(pru3A,pru3B)); //TRUE
+
+        //PRUEBAS DE LOS EJEMPLOS METODO ESJUNTO
+        // (todos tienen que ser False)
+        //PRUEBA EJEMPLO 1
+        Coordenada prue1 = new Coordenada(2,4);
+        Coordenada prue2 = new Coordenada(4,1);
+        Coordenada prue3 = new Coordenada(5,6);
+        Coordenada prue4 = new Coordenada(3,3);
+        Rectangulo prue1A = new Rectangulo(prue1,prue2);
+        Rectangulo prue1B = new Rectangulo(prue3,prue4);
+        System.out.println("PRUEBA EJEMPLO ERROR 1 METODO ESJUNTO: " + Verificador.esJunto(prue1A,prue1B)); //FALSE
+
+        //PRUEBA EJEMPLO 2
+        Coordenada prue5 = new Coordenada(3,4);
+        Coordenada prue6 = new Coordenada(6,2);
+        Coordenada prue7 = new Coordenada(5,5);
+        Coordenada prue8 = new Coordenada(4,1);
+        Rectangulo prue2A = new Rectangulo(prue5,prue6);
+        Rectangulo prue2B = new Rectangulo(prue7,prue8);
+        System.out.println("PRUEBA EJEMPLO ERROR 2 METODO ESJUNTO: " + Verificador.esJunto(prue2A,prue2B)); //FALSE
 
     }
 }
