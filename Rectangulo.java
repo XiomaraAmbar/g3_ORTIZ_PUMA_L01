@@ -21,14 +21,14 @@ public class Rectangulo {
 
     //metodos definen 'x' y 'y' en rangos de menor a mayor
     //Se uso min y max en vez de if
-    public double[] definiendoX() {
+    public double[] rangoX() {
         double[] ejeX = new double[2];
         ejeX[0] = Math.min(esquina1.getX(), esquina2.getX()); // se guarda en posicion 0 el x menor
         ejeX[1] = Math.max(esquina1.getX(), esquina2.getX()); // y en posicion 1 el x mayor
         return ejeX;
     }
 
-    public double[] definiendoY() {
+    public double[] rangoY() {
         double[] ejeY = new double[2];
         ejeY[0] = Math.min(esquina1.getY(), esquina2.getY()); // se guarda en posicion 0 el y menor
         ejeY[1] = Math.max(esquina1.getY(), esquina2.getY()); // y en posicion 1 el y mayor
@@ -85,8 +85,19 @@ public class Rectangulo {
     }
     */
 
+    public double calculoArea() {
+        //area del rectangulo es ancho por alto
+        double[] x = rangoX();
+        double[] y = rangoY();
+
+        double ancho = x[1] - x[0]; //mayor x menos el menor x
+        double alto = y[1] - y[0];  //mayor y menos el menor y
+
+        return ancho * alto;
+    }
+
     public String toString() {
-        return "(Esquina1: " + this.esquina1 + ", Esquina2: " + this.esquina2 + ")";
+        return "( " + this.esquina1 + ", " + this.esquina2 + ")";
         //return "Rectangulo (Esquina1: " + this.esquina1 + ", Esquina2: " + this.esquina2 + ")";
     }
 }

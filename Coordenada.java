@@ -61,7 +61,7 @@ public class Coordenada {
 
     //metodo que devuelve los valores de una coordenada
     public String toString(){
-        return "(X: " + this.x + ", Y: " + this.y + ")";
+        return "[" + this.x + ", " + this.y + "]";
         //return "Coordenada (x: " + this.x + ", Y: " + this.y + ")";
     }
 }
