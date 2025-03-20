@@ -14,10 +14,16 @@ public class ContainerRect {
     }
 
     public void addRectangulo(Rectangulo rect){
-        if (numRec < n) { // Verifica si hay espacio disponible
-            rectangulos[numRec] = rect;
+        if (numRec >= n) { //Si los rectangulos es menor a la capacidad
+            System.out.println("Sin capacidad para mas rectangulos");
         }
-        else{System.out.println("Sin capacidad para mas rectangulos");}
+        else{
+            rectangulos[numRec] = rect;
+            distancias[numRec] = Coordenada.distancia(rect.getEsquina1(),rect.getEsquina2());
+            areas[numRec] = rect.calculoArea();
+            numRec++;
+            System.out.println("Rectángulo agregado");
+        }
     }
 
 
