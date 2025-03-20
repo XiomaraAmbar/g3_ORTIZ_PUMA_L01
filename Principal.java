@@ -89,6 +89,23 @@ public class Principal {
         System.out.println("********* ----------> PRUEBAS EJEMPLOS CLASE VERIFICADOR <---------- *********");
         //PRUEBAS DE LOS EJEMPLOS METODO SOBREPONER
         // (todos tienen que ser true)
+        /*
+        EJE x:
+        CASO 1: (X1[0] < X2[0] && X1[0] < X2[1] && X1[1] > X2[0] && X1[1] < X2[1]);
+        CASO 2: (X1[0] < X2[0] && X1[0] < X2[1] && X1[1] > X2[0] && X1[1] > X2[1]);
+        CASO 3: (X1[0] > X2[0] && X1[0] < X2[1] && X1[1] > X2[0] && X1[1] < X2[1]);
+        CASO 4: (X1[0] == X2[0] && X1[0] < X2[1] && X1[1] > X2[0] && X1[1] > X2[1]);
+        CASO 5: (X1[0] > X2[0] && X1[0] < X2[1] && X1[1] > X2[0] && X1[1] < X2[1]);
+        CASO 6: (X1[0] > X2[0] && X1[0] < X2[1] && X1[1] > X2[0] && X1[1] < X2[1]);
+
+        EJE Y:
+        CASO 1: (Y1[0] < Y2[0] && Y1[0] < Y2[1] && Y1[1] > Y2[0] && Y1[1] < Y2[1]);
+        CASO 2: (Y1[0] > Y2[0] && Y1[0] < Y2[1] && Y1[1] > Y2[0] && Y1[1] < Y2[1]);
+        CASO 3: (Y1[0] > Y2[0] && Y1[0] < Y2[1] && Y1[1] > Y2[0] && Y1[1] > Y2[1]);
+        CASO 4: (Y1[0] < Y2[0] && Y1[0] < Y2[1] && Y1[1] > Y2[0] && Y1[1] > Y2[1]);
+        CASO 5: (Y1[0] > Y2[0] && Y1[0] < Y2[1] && Y1[1] > Y2[0] && Y1[1] < Y2[1]);
+        CASO 6: (Y1[0] == Y2[0] && Y1[0] < Y2[1] && Y1[1] > Y2[0] && Y1[1] == Y2[1]);
+        */
         System.out.println("********* PRUEBAS EJEMPLOS METODO SOBREPONER *********");
         //PRUEBA EJEMPLO 1
         Coordenada p1 = new Coordenada(2,4);
@@ -167,6 +184,17 @@ public class Principal {
 
         //PRUEBAS DE LOS EJEMPLOS METODO ESJUNTO
         // (todos tienen que ser true)
+        /*
+        EJE x:
+        CASO 1: (X1[0] < X2[0] && X1[0] < X2[1] && X1[1] == X2[0] && X1[1] < X2[1]);
+        CASO 2: (X1[0] > X2[0] && X1[0] < X2[1] && X1[1] > X2[0] && X1[1] < X2[1]);
+        CASO 3: (X1[0] < X2[0] && X1[0] < X2[1] && X1[1] == X2[0] && X1[1] < X2[1]);
+
+        EJE Y:
+        CASO 1: (Y1[0] < Y2[0] && Y1[0] < Y2[1] && Y1[1] > Y2[0] && Y1[1] < Y2[1]);
+        CASO 2: (Y1[0] > Y2[0] && Y1[0] == Y2[1] && Y1[1] > Y2[0] && Y1[1] > Y2[1]);
+        CASO 3: (Y1[0] > Y2[0] && Y1[0] == Y2[1] && Y1[1] > Y2[0] && Y1[1] > Y2[1]);
+         */
         System.out.println();
         System.out.println("********* PRUEBAS EJEMPLOS METODO ESJUNTO *********");
         //PRUEBA EJEMPLO 1
@@ -215,6 +243,68 @@ public class Principal {
         Rectangulo prue2A = new Rectangulo(prue5,prue6);
         Rectangulo prue2B = new Rectangulo(prue7,prue8);
         System.out.println("PRUEBA EJEMPLO ERROR 2 METODO ESJUNTO: " + Verificador.esJunto(prue2A,prue2B)); //FALSE
+
+        //PRUEBAS DE LOS EJEMPLOS METODO ESDISJUNTO
+        // (todos tienen que ser true)
+        /*
+        EJE x:
+        CASO 1: (X1[0] < X2[0] && X1[0] < X2[1] && X1[1] < X2[0] && X1[1] < X2[1]);
+        CASO 2: (X1[0] < X2[0] && X1[0] < X2[1] && X1[1] < X2[0] && X1[1] < X2[1]);
+        CASO 3: (X1[0] > X2[0] && X1[0] < X2[1] && X1[1] > X2[0] && X1[1] < X2[1]);
+
+        EJE Y:
+        CASO 1: (Y1[0] > Y2[0] && Y1[0] < Y2[1] && Y1[1] > Y2[0] && Y1[1] > Y2[1]);
+        CASO 2: (Y1[0] < Y2[0] && Y1[0] < Y2[1] && Y1[1] < Y2[0] && Y1[1] < Y2[1]);
+        CASO 3: (Y1[0] > Y2[0] && Y1[0] > Y2[1] && Y1[1] > Y2[0] && Y1[1] > Y2[1]);
+         */
+        System.out.println();
+        System.out.println("********* PRUEBAS EJEMPLOS METODO ESDISJUNTO *********");
+        //PRUEBA EJEMPLO 1
+        Coordenada prueba1 = new Coordenada(1,7);
+        Coordenada prueba2 = new Coordenada(3,5);
+        Coordenada prueba3 = new Coordenada(6,6);
+        Coordenada prueba4 = new Coordenada(4,4);
+        Rectangulo prueba1A = new Rectangulo(prueba1,prueba2);
+        Rectangulo prueba1B = new Rectangulo(prueba3,prueba4);
+        System.out.println("PRUEBA EJEMPLO 1 METODO ESDISJUNTO: " + Verificador.esDisjunto(prueba1A,prueba1B)); //TRUE
+
+        //PRUEBA EJEMPLO 2
+        Coordenada prueba5 = new Coordenada(2,2);
+        Coordenada prueba6 = new Coordenada(1,1);
+        Coordenada prueba7 = new Coordenada(4,6);
+        Coordenada prueba8 = new Coordenada(6,4);
+        Rectangulo prueba2A = new Rectangulo(prueba5,prueba6);
+        Rectangulo prueba2B = new Rectangulo(prueba7,prueba8);
+        System.out.println("PRUEBA EJEMPLO 2 METODO ESDISJUNTO: " + Verificador.esDisjunto(prueba2A,prueba2B)); //TRUE
+
+        //PRUEBA EJEMPLO 3
+        Coordenada prueba9 = new Coordenada(9,5);
+        Coordenada prueba10 = new Coordenada(8,4);
+        Coordenada prueba11 = new Coordenada(6,3);
+        Coordenada prueba12 = new Coordenada(10,2);
+        Rectangulo prueba3A = new Rectangulo(prueba9,prueba10);
+        Rectangulo prueba3B = new Rectangulo(prueba11,prueba12);
+        System.out.println("PRUEBA EJEMPLO 3 METODO ESDISJUNTO: " + Verificador.esDisjunto(prueba3A,prueba3B)); //TRUE
+
+        //PRUEBAS DE LOS EJEMPLOS METODO ESJUNTO
+        // (todos tienen que ser False)
+        //PRUEBA EJEMPLO 1
+        Coordenada prueba01 = new Coordenada(1,8);
+        Coordenada prueba02 = new Coordenada(3,5);
+        Coordenada prueba03 = new Coordenada(5,9);
+        Coordenada prueba04 = new Coordenada(3,6);
+        Rectangulo prueba01A = new Rectangulo(prueba01,prueba02);
+        Rectangulo prueba01B = new Rectangulo(prueba03,prueba04);
+        System.out.println("PRUEBA EJEMPLO ERROR 1 METODO ESDISJUNTO: " + Verificador.esDisjunto(prueba01A,prueba01B)); //FALSE
+
+        //PRUEBA EJEMPLO 2
+        Coordenada prueba05 = new Coordenada(3,4);
+        Coordenada prueba06 = new Coordenada(6,2);
+        Coordenada prueba07 = new Coordenada(5,5);
+        Coordenada prueba08 = new Coordenada(4,1);
+        Rectangulo prueba02A = new Rectangulo(prueba05,prueba06);
+        Rectangulo prueba02B = new Rectangulo(prueba07,prueba08);
+        System.out.println("PRUEBA EJEMPLO ERROR 2 METODO ESDISJUNTO: " + Verificador.esDisjunto(prueba02A,prueba02B)); //FALSE
 
     }
 }

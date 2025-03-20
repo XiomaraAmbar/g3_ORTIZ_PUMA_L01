@@ -1,23 +1,6 @@
 public class Verificador {
 
     public static boolean esSobrePos(Rectangulo r1,Rectangulo r2){
-        /*
-        EJE x:
-        CASO 1: (X1[0] < X2[0] && X1[0] < X2[1] && X1[1] > X2[0] && X1[1] < X2[1]);
-        CASO 2: (X1[0] < X2[0] && X1[0] < X2[1] && X1[1] > X2[0] && X1[1] > X2[1]);
-        CASO 3: (X1[0] > X2[0] && X1[0] < X2[1] && X1[1] > X2[0] && X1[1] < X2[1]);
-        CASO 4: (X1[0] == X2[0] && X1[0] < X2[1] && X1[1] > X2[0] && X1[1] > X2[1]);
-        CASO 5: (X1[0] > X2[0] && X1[0] < X2[1] && X1[1] > X2[0] && X1[1] < X2[1]);
-        CASO 6: (X1[0] > X2[0] && X1[0] < X2[1] && X1[1] > X2[0] && X1[1] < X2[1]);
-
-        EJE Y:
-        CASO 1: (Y1[0] < Y2[0] && Y1[0] < Y2[1] && Y1[1] > Y2[0] && Y1[1] < Y2[1]);
-        CASO 2: (Y1[0] > Y2[0] && Y1[0] < Y2[1] && Y1[1] > Y2[0] && Y1[1] < Y2[1]);
-        CASO 3: (Y1[0] > Y2[0] && Y1[0] < Y2[1] && Y1[1] > Y2[0] && Y1[1] > Y2[1]);
-        CASO 4: (Y1[0] < Y2[0] && Y1[0] < Y2[1] && Y1[1] > Y2[0] && Y1[1] > Y2[1]);
-        CASO 5: (Y1[0] > Y2[0] && Y1[0] < Y2[1] && Y1[1] > Y2[0] && Y1[1] < Y2[1]);
-        CASO 6: (Y1[0] == Y2[0] && Y1[0] < Y2[1] && Y1[1] > Y2[0] && Y1[1] == Y2[1]);
-         */
 
         double[] x1 = r1.rangoX();
         double[] y1 = r1.rangoY();
@@ -32,21 +15,6 @@ public class Verificador {
     }
 
     public static boolean esJunto(Rectangulo r1,Rectangulo r2){
-        /*
-        EJE x:
-        CASO 1: (X1[0] < X2[0] && X1[0] < X2[1] && X1[1] == X2[0] && X1[1] < X2[1]);
-        CASO 2: (X1[0] > X2[0] && X1[0] < X2[1] && X1[1] > X2[0] && X1[1] < X2[1]);
-        CASO 3: (X1[0] < X2[0] && X1[0] < X2[1] && X1[1] == X2[0] && X1[1] < X2[1]);
-
-        EJE Y:
-        CASO 1: (Y1[0] < Y2[0] && Y1[0] < Y2[1] && Y1[1] > Y2[0] && Y1[1] < Y2[1]);
-        CASO 2: (Y1[0] > Y2[0] && Y1[0] == Y2[1] && Y1[1] > Y2[0] && Y1[1] > Y2[1]);
-        CASO 3: (Y1[0] > Y2[0] && Y1[0] == Y2[1] && Y1[1] > Y2[0] && Y1[1] > Y2[1]);
-         */
-        //Se confirma que los rectangulos no esten sobreponiendose, en ese caso no estarian juntos
-        if (esSobrePos(r1, r2)) {
-            return false;
-        }
 
         double[] x1 = r1.rangoX();
         double[] y1 = r1.rangoY();
@@ -68,11 +36,65 @@ public class Verificador {
     }
 
     public static boolean esDisjunto(Rectangulo r1,Rectangulo r2) {
+        return !esSobrePos(r1, r2) && !esJunto(r1, r2);
+
+        /*
         double[] x1 = r1.rangoX();
         double[] y1 = r1.rangoY();
         double[] x2 = r2.rangoX();
         double[] y2 = r2.rangoY();
+
+        return (x1[1] < x2[0] || x2[1] < x1[0] || y1[1] < y2[0] || y2[1] < y1[0]); //Evalua si los rectangulos no estan juntos ni se sobreponen
+
+         */
     }
 
-
 }
+
+//PRUEBAS DE LOS EJEMPLOS METODO SOBREPONER
+
+        /*
+        EJE x:
+        CASO 1: (X1[0] < X2[0] && X1[0] < X2[1] && X1[1] > X2[0] && X1[1] < X2[1]);
+        CASO 2: (X1[0] < X2[0] && X1[0] < X2[1] && X1[1] > X2[0] && X1[1] > X2[1]);
+        CASO 3: (X1[0] > X2[0] && X1[0] < X2[1] && X1[1] > X2[0] && X1[1] < X2[1]);
+        CASO 4: (X1[0] == X2[0] && X1[0] < X2[1] && X1[1] > X2[0] && X1[1] > X2[1]);
+        CASO 5: (X1[0] > X2[0] && X1[0] < X2[1] && X1[1] > X2[0] && X1[1] < X2[1]);
+        CASO 6: (X1[0] > X2[0] && X1[0] < X2[1] && X1[1] > X2[0] && X1[1] < X2[1]);
+
+        EJE Y:
+        CASO 1: (Y1[0] < Y2[0] && Y1[0] < Y2[1] && Y1[1] > Y2[0] && Y1[1] < Y2[1]);
+        CASO 2: (Y1[0] > Y2[0] && Y1[0] < Y2[1] && Y1[1] > Y2[0] && Y1[1] < Y2[1]);
+        CASO 3: (Y1[0] > Y2[0] && Y1[0] < Y2[1] && Y1[1] > Y2[0] && Y1[1] > Y2[1]);
+        CASO 4: (Y1[0] < Y2[0] && Y1[0] < Y2[1] && Y1[1] > Y2[0] && Y1[1] > Y2[1]);
+        CASO 5: (Y1[0] > Y2[0] && Y1[0] < Y2[1] && Y1[1] > Y2[0] && Y1[1] < Y2[1]);
+        CASO 6: (Y1[0] == Y2[0] && Y1[0] < Y2[1] && Y1[1] > Y2[0] && Y1[1] == Y2[1]);
+        */
+
+        //PRUEBAS DE LOS EJEMPLOS METODO ESJUNTO
+        /*
+        EJE x:
+        CASO 1: (X1[0] < X2[0] && X1[0] < X2[1] && X1[1] == X2[0] && X1[1] < X2[1]);
+        CASO 2: (X1[0] > X2[0] && X1[0] < X2[1] && X1[1] > X2[0] && X1[1] < X2[1]);
+        CASO 3: (X1[0] < X2[0] && X1[0] < X2[1] && X1[1] == X2[0] && X1[1] < X2[1]);
+
+        EJE Y:
+        CASO 1: (Y1[0] < Y2[0] && Y1[0] < Y2[1] && Y1[1] > Y2[0] && Y1[1] < Y2[1]);
+        CASO 2: (Y1[0] > Y2[0] && Y1[0] == Y2[1] && Y1[1] > Y2[0] && Y1[1] > Y2[1]);
+        CASO 3: (Y1[0] > Y2[0] && Y1[0] == Y2[1] && Y1[1] > Y2[0] && Y1[1] > Y2[1]);
+         */
+
+//PRUEBAS DE LOS EJEMPLOS METODO ESDISJUNTO
+/*
+        EJE x:
+        CASO 1: (X1[0] < X2[0] && X1[0] < X2[1] && X1[1] < X2[0] && X1[1] < X2[1]);
+        CASO 2: (X1[0] < X2[0] && X1[0] < X2[1] && X1[1] < X2[0] && X1[1] < X2[1]);
+        CASO 3: (X1[0] > X2[0] && X1[0] < X2[1] && X1[1] > X2[0] && X1[1] < X2[1]);
+
+        EJE Y:
+        CASO 1: (Y1[0] > Y2[0] && Y1[0] < Y2[1] && Y1[1] > Y2[0] && Y1[1] > Y2[1]);
+        CASO 2: (Y1[0] < Y2[0] && Y1[0] < Y2[1] && Y1[1] < Y2[0] && Y1[1] < Y2[1]);
+        CASO 3: (Y1[0] > Y2[0] && Y1[0] > Y2[1] && Y1[1] > Y2[0] && Y1[1] > Y2[1]);
+         */
+
+
