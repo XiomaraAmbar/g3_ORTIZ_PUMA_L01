@@ -26,6 +26,10 @@ public class ContainerRect {
         }
     }
 
+    public int getNumRec(){
+        return numRec;
+    }
+
     public String toString() {
         StringBuilder sb = new StringBuilder();
 

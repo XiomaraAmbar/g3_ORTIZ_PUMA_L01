@@ -3,59 +3,33 @@ import java.util.Scanner;
 public class Principal {
     public static void main(String[] args) {
         Scanner nuevo = new Scanner(System.in);
-            /*
-        ***********************************************************************************
-        ACTIVIDAD DOS:
-        Creación de dos objetos rectangulos (A y B)
-        * *********************************************************************************
-        */
-        //CREACION DEL CONTENEDOR
-        ContainerRect contenedor = new ContainerRect(10); //Capacidad para 10
+        //Se pide la capacidad del contenedor
+        System.out.print("Ingrese la cantidad máxima de rectángulos a almacenar: ");
+        int capacidad = nuevo.nextInt();
+        ContainerRect contenedor = new ContainerRect(capacidad); //Se crea el contenedor
 
-        //Creación del primer réctangulo
-        System.out.println();
-        System.out.println("**** Creación del rectangulo A****");
-        System.out.print("Ingrese una esquina del 1er rectángulo: " );
-        double ca1 = nuevo.nextDouble(); //Coordenada uno
-        double ca2 = nuevo.nextDouble(); //Coordenada dos
-        System.out.print("Ingrese la esquina opuesta del 1er rectángulo: ");
-        double ca3 = nuevo.nextDouble(); //Coordenada tres
-        double ca4 = nuevo.nextDouble(); //Coordenada cuatro
+        //Se usa un bucle para pedir rectángulos hasta que el contenedor esté lleno
+        while (contenedor.getNumRec() < capacidad) {
+            System.out.println("\n**** Creación del rectángulo ****");
+            System.out.print("Ingrese una esquina del rectángulo: ");
+            double x1 = nuevo.nextDouble();
+            double y1 = nuevo.nextDouble();
+            System.out.print("Ingrese la esquina opuesta del rectángulo: ");
+            double x2 = nuevo.nextDouble();
+            double y2 = nuevo.nextDouble();
 
-        Coordenada esquinaA1 = new Coordenada(ca1,ca2);
-        Coordenada esquinaA2 = new Coordenada(ca3,ca4);
+            //Se crean las coordenadas y el rectángulo
+            Coordenada esquina1 = new Coordenada(x1, y1);
+            Coordenada esquina2 = new Coordenada(x2, y2);
+            Rectangulo rectanguloNuevo = new Rectangulo(esquina1, esquina2);
 
-        Rectangulo A = new Rectangulo(esquinaA1,esquinaA2);
-        contenedor.addRectangulo(A); //Se agrega al contenedor el rectangulo A creado
+            //Se agrega el rectángulo al contenedor
+            contenedor.addRectangulo(rectanguloNuevo);
+        }
 
-        //Creación del segundo réctangulo
-        System.out.println();
-        System.out.println("**** Creación del rectangulo B****");
-        System.out.print("Ingrese una esquina del 2do rectángulo: ");
-        double cb1 = nuevo.nextDouble(); //Coordenada uno
-        double cb2 = nuevo.nextDouble(); //Coordenada dos
-        System.out.print("Ingrese la esquina opuesta del 2do rectángulo: ");
-        double cb3 = nuevo.nextDouble(); //Coordenada tres
-        double cb4 = nuevo.nextDouble(); //Coordenada cuatro
-
-        Coordenada esquinaB1 = new Coordenada(cb1,cb2);
-        Coordenada esquinaB2 = new Coordenada(cb3,cb4);
-
-        Rectangulo B = new Rectangulo(esquinaB1,esquinaB2);
-        contenedor.addRectangulo(B); //Se agrega al contenedor el rectangulo B creado
-
-        //IMPRESION DE LOS RECTANGULOS
-        System.out.println();
-        mostrarRectangulo(A);
-        mostrarRectangulo(B);
-
-        //SE PRUEBA LA CLASE VERIFICADOR
-        mostrarInformacionRectangulos(A,B);
-
-        //Se muestran el contenido del contenedor
-        System.out.println("*** Contenido del Contenedor ***");
+        // Se muestran los rectángulos almacenados
+        System.out.println("\n*** Contenido del Contenedor ***");
         System.out.println(contenedor);
-
     }
 
     //PUNTO 2 PARTE C.1
@@ -69,11 +43,9 @@ public class Principal {
     }
 
     public static void mostrarInformacionRectangulos(Rectangulo r1, Rectangulo r2) {
-        System.out.println("\n**** INFORMACIÓN DE LOS RECTÁNGULOS ****");
-        System.out.println("Rectángulo A = " + r1);
+        System.out.println("\nRectángulo A = " + r1);
         System.out.println("Rectángulo B = " + r2);
 
-        System.out.println("\n**** PRUEBA DE LA CLASE VERIFICADOR: ****");
         if (Verificador.esSobrePos(r1, r2)) {
             System.out.println("Rectángulos A y B se sobreponen.");
             System.out.println("Área de sobreposición = " + rectanguloSobre(r1, r2).calculoArea());
