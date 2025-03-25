@@ -97,7 +97,7 @@ public class Rectangulo {
     }
 
     public String toString() {
-        return "( " + this.esquina1 + ", " + this.esquina2 + ")";
+        return "(" + this.esquina1 + ", " + this.esquina2 + ")";
         //return "Rectangulo (Esquina1: " + this.esquina1 + ", Esquina2: " + this.esquina2 + ")";
     }
 }

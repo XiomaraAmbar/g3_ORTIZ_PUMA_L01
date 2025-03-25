@@ -3,8 +3,8 @@ import java.util.*;
 public class Principal {
     public static void main(String[] args) {
         Scanner nuevo = new Scanner(System.in);
-        /*
 
+/*
         //PRUEBA COORDENADA
         Coordenada co1 = new Coordenada();
         Coordenada co2 = new Coordenada(2,3);
@@ -23,11 +23,11 @@ public class Principal {
 
         //Se imprime los rectangulos de prueba
         System.out.println("**** RECTANGULOS DE PRUEBA ****");
-        System.out.println(r1);
-        System.out.println(r2);
+        mostrarRectangulo(r1);
+        mostrarRectangulo(r2);
         System.out.println();
 
-         */
+*/
 
         System.out.println("********* ----------> PRUEBAS EJEMPLOS CLASE VERIFICADOR <---------- *********");
         //PRUEBAS DE LOS EJEMPLOS METODO SOBREPONER
@@ -288,19 +288,39 @@ public class Principal {
 
         //IMPRESION DE LOS RECTANGULOS
         System.out.println();
-        System.out.println("Rectangulo A = "+ A);
-        System.out.println("Rectangulo B = "+ B);
+        mostrarRectangulo(A);
+        mostrarRectangulo(B);
 
         //SE PRUEBA LA CLASE VERIFICADOR
-        System.out.println();
-        System.out.println("**** PRUEBA DE LA CLASE VERIFICADOR: ****");
-        if(Verificador.esSobrePos(A,B)){
-            System.out.println("Rectangulos A y B se sobreponen.");
-            System.out.println("Area de sobreposición = " + rectanguloSobre(A,B).calculoArea());}
-        else if(Verificador.esJunto(A,B)){ System.out.println("Rectangulos A y B se juntan.");}
-        else if(Verificador.esDisjunto(A,B)){ System.out.println("Rectangulos A y B son disjuntos.");}
-        System.out.println();
+        mostrarInformacionRectangulos(A,B);
 
+    }
+
+    //PUNTO 2 PARTE C.1
+    //CREAR METODO DE CLASE QUE MUESTRE LA INFORMACIÓN DE CADA RECTÁNGULO
+    public static void mostrarRectangulo(Rectangulo r) {
+        if (r != null) {
+            System.out.println(r.toString());
+        } else {
+            System.out.println("El rectángulo es nulo.");
+        }
+    }
+
+    public static void mostrarInformacionRectangulos(Rectangulo r1, Rectangulo r2) {
+        System.out.println("\n**** INFORMACIÓN DE LOS RECTÁNGULOS ****");
+        System.out.println("Rectángulo A = " + r1);
+        System.out.println("Rectángulo B = " + r2);
+
+        System.out.println("\n**** PRUEBA DE LA CLASE VERIFICADOR: ****");
+        if (Verificador.esSobrePos(r1, r2)) {
+            System.out.println("Rectángulos A y B se sobreponen.");
+            System.out.println("Área de sobreposición = " + rectanguloSobre(r1, r2).calculoArea());
+        } else if (Verificador.esJunto(r1, r2)) {
+            System.out.println("Rectángulos A y B se juntan.");
+        } else if (Verificador.esDisjunto(r1, r2)) {
+            System.out.println("Rectángulos A y B son disjuntos.");
+        }
+        System.out.println();
     }
 
     //PUNTO 2 PARTE C.3.A
@@ -357,3 +377,4 @@ public class Principal {
 
     }
 }
+

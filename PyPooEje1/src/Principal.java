@@ -46,23 +46,43 @@ public class Principal {
 
         //IMPRESION DE LOS RECTANGULOS
         System.out.println();
-        System.out.println("Rectangulo A = "+ A);
-        System.out.println("Rectangulo B = "+ B);
+        mostrarRectangulo(A);
+        mostrarRectangulo(B);
 
         //SE PRUEBA LA CLASE VERIFICADOR
-        System.out.println();
-        System.out.println("**** PRUEBA DE LA CLASE VERIFICADOR: ****");
-        if(Verificador.esSobrePos(A,B)){
-            System.out.println("Rectangulos A y B se sobreponen.");
-            System.out.println("Area de sobreposición = " + rectanguloSobre(A,B).calculoArea());}
-        else if(Verificador.esJunto(A,B)){ System.out.println("Rectangulos A y B se juntan.");}
-        else if(Verificador.esDisjunto(A,B)){ System.out.println("Rectangulos A y B son disjuntos.");}
-        System.out.println();
+        mostrarInformacionRectangulos(A,B);
 
         //Se muestran el contenido del contenedor
         System.out.println("*** Contenido del Contenedor ***");
         System.out.println(contenedor);
 
+    }
+
+    //PUNTO 2 PARTE C.1
+    //CREAR METODO DE CLASE QUE MUESTRE LA INFORMACIÓN DE CADA RECTÁNGULO
+    public static void mostrarRectangulo(Rectangulo r) {
+        if (r != null) {
+            System.out.println(r.toString());
+        } else {
+            System.out.println("El rectángulo es nulo.");
+        }
+    }
+
+    public static void mostrarInformacionRectangulos(Rectangulo r1, Rectangulo r2) {
+        System.out.println("\n**** INFORMACIÓN DE LOS RECTÁNGULOS ****");
+        System.out.println("Rectángulo A = " + r1);
+        System.out.println("Rectángulo B = " + r2);
+
+        System.out.println("\n**** PRUEBA DE LA CLASE VERIFICADOR: ****");
+        if (Verificador.esSobrePos(r1, r2)) {
+            System.out.println("Rectángulos A y B se sobreponen.");
+            System.out.println("Área de sobreposición = " + rectanguloSobre(r1, r2).calculoArea());
+        } else if (Verificador.esJunto(r1, r2)) {
+            System.out.println("Rectángulos A y B se juntan.");
+        } else if (Verificador.esDisjunto(r1, r2)) {
+            System.out.println("Rectángulos A y B son disjuntos.");
+        }
+        System.out.println();
     }
 
     //PUNTO 2 PARTE C.3.A
